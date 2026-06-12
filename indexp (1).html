@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PRADHIKSHA B. • NEURAL SYNTHESIS</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;family=Playfair+Display:ital@0;1&amp;family=Geist+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-bright": "#31394d",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#3d0026",
+                    "surface-container": "#171f33",
+                    "outline-variant": "#464555",
+                    "inverse-on-surface": "#283044",
+                    "on-secondary": "#003640",
+                    "secondary-fixed": "#acedff",
+                    "tertiary-fixed": "#ffd8e7",
+                    "primary-container": "#4f46e5",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "surface-dim": "#0b1326",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#004e5c",
+                    "surface": "#0b1326",
+                    "surface-tint": "#c3c0ff",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#ffafd3",
+                    "outline": "#918fa1",
+                    "inverse-primary": "#4d44e3",
+                    "on-tertiary-fixed-variant": "#85145a",
+                    "on-error": "#690005",
+                    "on-tertiary": "#620040",
+                    "on-primary-container": "#dad7ff",
+                    "secondary-fixed-dim": "#4cd7f6",
+                    "on-primary": "#1d00a5",
+                    "background": "#0b1326",
+                    "on-surface": "#dae2fd",
+                    "primary": "#c3c0ff",
+                    "on-secondary-container": "#00424e",
+                    "secondary-container": "#03b5d3",
+                    "tertiary-container": "#a63274",
+                    "surface-variant": "#2d3449",
+                    "surface-container-low": "#131b2e",
+                    "tertiary": "#ffafd3",
+                    "inverse-surface": "#dae2fd",
+                    "surface-container-high": "#222a3d",
+                    "on-secondary-fixed": "#001f26",
+                    "secondary": "#4cd7f6",
+                    "primary-fixed": "#e2dfff",
+                    "on-tertiary-container": "#ffcee2",
+                    "surface-container-highest": "#2d3449",
+                    "on-surface-variant": "#c7c4d8",
+                    "on-primary-fixed": "#0f0069",
+                    "surface-container-lowest": "#060e20",
+                    "on-background": "#dae2fd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-md": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"],
+                    "display-lg-mobile": ["Space Grotesk"],
+                    "label-mono": ["Geist Mono"],
+                    "body-lg": ["Inter"],
+                    "quote-xl": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                    "quote-xl": ["48px", {"lineHeight": "1.4", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            background-image: radial-gradient(#1E293B 1px, transparent 1px);
+            background-size: 24px 24px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top-color: rgba(255, 255, 255, 0.2);
+            border-left-color: rgba(255, 255, 255, 0.2);
+        }
+        .logic-line {
+            position: relative;
+        }
+        .logic-line::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #c3c0ff, transparent);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4cd7f6;
+            border-radius: 10px;
+        }
+        section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="text-on-surface custom-scrollbar">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/50 dark:bg-surface/50 backdrop-blur-xl border-b border-outline-variant/20 flex justify-between items-center px-margin-mobile py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="font-label-mono text-label-mono tracking-widest text-secondary uppercase text-xl">PRADHIKSHA B.</span>
+</div>
+<div class="hidden md:flex items-center gap-4 mr-4"><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined text-xl">link</span></a><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined text-xl">terminal</span></a><a class="text-on-surface-variant hover:text-secondary transition-colors" href="mailto:pradyy24@gmail.com"><span class="material-symbols-outlined text-xl">mail</span></a></div><button class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors duration-300 active:scale-95 transition-transform" data-icon="menu">menu</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative pt-24 pb-32">
+<!-- Hero Section -->
+<section class="px-margin-mobile min-h-[80vh] flex flex-col justify-center gap-8 relative overflow-hidden" id="intro">
+<div class="space-y-2">
+<span class="font-label-mono text-label-mono text-secondary uppercase tracking-[0.2em]">Portfolio 2024</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface text-5xl">Pradhiksha B.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm">First-Year CSE Student <span class="text-primary">(AI &amp; ML)</span></p>
+</div>
+<div class="relative py-12">
+<p class="font-quote-xl text-3xl leading-snug text-primary italic">
+                    "Passionate about AI, problem-solving, and building technology that improves everyday life."
+                </p>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-body-md font-semibold flex items-center gap-2 hover:brightness-110 transition-all">
+                    Explore Work <span class="material-symbols-outlined" data-icon="arrow_downward">arrow_downward</span>
+</button>
+</div>
+</section>
+<!-- About Section -->
+<section class="px-margin-mobile py-20 space-y-12">
+<div class="space-y-4">
+<h2 class="font-headline-md text-headline-md-mobile text-secondary">The Synthesis</h2>
+<div class="glass-card p-6 rounded-2xl">
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                        I am currently navigating the frontiers of <span class="text-secondary font-semibold">Artificial Intelligence and Machine Learning</span> as a First-Year Computer Science Engineering student. My vision lies at the intersection of emerging technologies like IoT, Data Science, and <span class="text-primary font-semibold">Human-Centered Design</span>. I strive to create digital systems that feel intuitive and act intelligently to solve real-world complexities.
+                    </p>
+</div>
+</div>
+<!-- Education -->
+<div class="space-y-6">
+<h3 class="font-label-mono text-label-mono text-outline uppercase tracking-widest">Academic Core</h3>
+<div class="logic-line pl-6 space-y-8">
+<div class="space-y-2">
+<h4 class="font-headline-md text-xl text-on-surface">B.E. in CSE (AI &amp; ML)</h4>
+<p class="font-body-md text-on-surface-variant">Active Degree Candidate • Current Semester</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-full text-xs font-label-mono text-primary border border-primary/20">Programming in C</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-xs font-label-mono text-primary border border-primary/20">Python Mastery</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-xs font-label-mono text-primary border border-primary/20">Discrete Math</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-xs font-label-mono text-primary border border-primary/20">Electronics</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-xs font-label-mono text-primary border border-primary/20">Computer Fundamentals</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="px-margin-mobile py-20 bg-surface-container-lowest" id="skills">
+<h2 class="font-headline-md text-headline-md-mobile text-primary mb-12">Technical Toolkit</h2>
+<div class="grid grid-cols-1 gap-6">
+<!-- Programming -->
+<div class="glass-card p-6 rounded-2xl space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="terminal">terminal</span>
+<h3 class="font-label-mono text-label-mono uppercase">Programming</h3>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="text-on-surface-variant font-body-md">C</span>
+<span class="text-outline">•</span>
+<span class="text-on-surface-variant font-body-md">Python</span>
+</div>
+</div>
+<!-- Specialized -->
+<div class="glass-card p-6 rounded-2xl space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
+<h3 class="font-label-mono text-label-mono uppercase">Specialized</h3>
+</div>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Artificial Intelligence</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Machine Learning</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> IoT Systems</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Problem Solving</li>
+</ul>
+</div>
+<!-- Tools -->
+<div class="glass-card p-6 rounded-2xl space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="construct">handyman</span>
+<h3 class="font-label-mono text-label-mono uppercase">Tools &amp; HW</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-white/5 rounded-md text-xs font-label-mono">GitHub</span>
+<span class="px-2 py-1 bg-white/5 rounded-md text-xs font-label-mono">VS Code</span>
+<span class="px-2 py-1 bg-white/5 rounded-md text-xs font-label-mono">ESP8266</span>
+<span class="px-2 py-1 bg-white/5 rounded-md text-xs font-label-mono">ESP32-CAM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Work/Projects Section -->
+<section class="px-margin-mobile py-20" id="work">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-md text-headline-md-mobile text-secondary">Neural Forge</h2>
+<span class="font-label-mono text-xs text-outline">01 / PROJECT</span>
+</div>
+<div class="relative">
+<div class="glass-card overflow-hidden rounded-3xl">
+<div class="relative h-64 w-full">
+<img class="w-full h-full object-cover opacity-60" data-alt="A futuristic smart mirror interface glowing in a dark room. The mirror displays real-time weather data, health metrics, and face recognition markers using neon cyan and violet colors. High-tech sensors and a sleek camera lens are integrated into the frame. The style is cinematic, dark, and highly technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNyYRiYpIZ5yRDD7kD1ASpM5Nj1ZkeZ3FnXhlvTR88KAywA2opwW-ZSV1t-nbxtdeFlMiZecE2ESdCSHWhr4hAymUIFp5KjyunK8VpKb_2i6t4FFGWTL0h3czZ-2uaKiR_T4xdT6_J0Bpxv-psTORB6NDJ5Z4mR8zcQNtf2PsqB7kA1YrKQE0_9adR09QACdHieXD9E9XQDPH6sivujZdE3-SczKZxWTIoo4DMXIskJaaKSOhDnU5ARJqDW6JiXfx8pkiZRdZBfToI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-xs font-label-mono backdrop-blur-md border border-secondary/30 mb-2 inline-block">HACKATHON WINNER</span>
+<h3 class="font-headline-md text-2xl text-on-surface">Smart AI Mirror</h3>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<p class="font-body-md text-on-surface-variant">
+                            An intelligent IoT ecosystem that transforms a standard reflective surface into a central hub for personal intelligence. Integrated AI, IoT, and Cloud technologies to deliver a holistic smart home experience.
+                        </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="visibility">visibility</span>
+<p class="text-xs font-label-mono text-outline">IMAGE RECOG.</p>
+</div>
+<div class="space-y-1">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="sensors">sensors</span>
+<p class="text-xs font-label-mono text-outline">ENV. MONITOR</p>
+</div>
+<div class="space-y-1">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="dashboard">dashboard</span>
+<p class="text-xs font-label-mono text-outline">SMART DASH</p>
+</div>
+<div class="space-y-1">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="directions_run">directions_run</span>
+<p class="text-xs font-label-mono text-outline">MOTION DETECT</p>
+</div>
+</div>
+<div class="pt-4 border-t border-white/5 space-y-4">
+<p class="text-xs font-label-mono text-secondary uppercase tracking-widest">Stack</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] bg-secondary-container/20 text-secondary-fixed border border-secondary-container px-2 py-0.5 rounded">ESP8266</span>
+<span class="text-[10px] bg-secondary-container/20 text-secondary-fixed border border-secondary-container px-2 py-0.5 rounded">ESP32-CAM</span>
+<span class="text-[10px] bg-secondary-container/20 text-secondary-fixed border border-secondary-container px-2 py-0.5 rounded">DHT11</span>
+<span class="text-[10px] bg-secondary-container/20 text-secondary-fixed border border-secondary-container px-2 py-0.5 rounded">Cloud AI</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Hackathon Participation -->
+<div class="mt-12 space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="emoji_events">emoji_events</span>
+<h4 class="font-headline-md text-xl">AINEX Hackathon</h4>
+</div>
+<div class="logic-line pl-6 space-y-4 font-body-md text-on-surface-variant">
+<p class="">Contributed across the full lifecycle of the Smart AI Mirror:</p>
+<ul class="space-y-2">
+<li class="flex gap-2"><span class="">•</span> Strategic Project Planning</li>
+<li class="flex gap-2"><span class="">•</span> Deep R&amp;D on IoT integration</li>
+<li class="flex gap-2"><span class="">•</span> Hardware Stress Testing</li>
+<li class="flex gap-2"><span class="">•</span> Cross-functional Team Collaboration</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Interests Section -->
+<section class="px-margin-mobile py-20 bg-surface-container-low">
+<h2 class="font-headline-md text-headline-md-mobile text-on-surface mb-12">Cognitive Domains</h2><p class="font-body-md text-on-surface-variant mb-8 -mt-8">Exploring the frontiers of technology and human-centered innovation.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3"><div class="aspect-square glass-card rounded-xl flex flex-col items-center justify-center gap-2 text-center p-2"><span class="material-symbols-outlined text-primary text-2xl" data-icon="auto_awesome">auto_awesome</span><span class="font-label-mono text-[10px] uppercase text-on-surface">AI &amp; ML</span></div><div class="aspect-square glass-card rounded-xl flex flex-col items-center justify-center gap-2 text-center p-2"><span class="material-symbols-outlined text-secondary text-2xl" data-icon="database">database</span><span class="font-label-mono text-[10px] uppercase text-on-surface">Data Science</span></div><div class="aspect-square glass-card rounded-xl flex flex-col items-center justify-center gap-2 text-center p-2"><span class="material-symbols-outlined text-primary text-2xl" data-icon="palette">palette</span><span class="font-label-mono text-[10px] uppercase text-on-surface">UX/UI Design</span></div><div class="aspect-square glass-card rounded-xl flex flex-col items-center justify-center gap-2 text-center p-2"><span class="material-symbols-outlined text-secondary text-2xl" data-icon="health_and_safety">health_and_safety</span><span class="font-label-mono text-[10px] uppercase text-on-surface">Health Tech</span></div></div>
+</section>
+<!-- Career Objective -->
+<section class="px-margin-mobile py-20">
+<div class="glass-card p-8 rounded-3xl border-primary/30 bg-primary/5 relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-8 -top-8 text-primary/10 text-9xl" data-icon="rocket_launch">rocket_launch</span>
+<h2 class="font-headline-md text-2xl text-primary mb-6">Career Trajectory</h2>
+<p class="font-body-md text-on-surface leading-relaxed italic">
+                    "Driven to bridge the gap between human intuition and machine intelligence. I am seeking to apply my problem-solving skills and technical foundation to build innovative solutions that redefine how we interact with everyday technology."
+                </p>
+</div>
+</section>
+<!-- Social/Contact Section -->
+<section class="px-margin-mobile py-20 space-y-12" id="social">
+<h2 class="font-headline-md text-headline-md-mobile text-secondary">Initiate Link</h2>
+<div class="space-y-6">
+<a class="flex items-center justify-between p-4 glass-card rounded-xl group transition-all hover:bg-primary/10" href="mailto:pradyy24@gmail.com">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<span class="font-body-md">pradyy24@gmail.com</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="flex items-center justify-between p-4 glass-card rounded-xl group transition-all hover:bg-secondary/10" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="link">link</span>
+<span class="font-body-md">LinkedIn Profile</span>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<div class="flex items-center justify-between p-4 glass-card rounded-xl">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline" data-icon="call">call</span>
+<span class="font-body-md">9901427960</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full block pb-32 border-t border-outline-variant/10 bg-surface-dim flex flex-col items-center gap-4 px-margin-mobile py-16 text-center"><div class="font-label-mono text-secondary uppercase tracking-widest mb-2">PRADHIKSHA B.</div><p class="font-body-md text-on-surface-variant opacity-80">© 2024 PRADHIKSHA B • NEURAL SYNTHESIS v1.0</p></footer>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface-container-low/80 dark:bg-surface-container-low/80 backdrop-blur-2xl border-t border-white/10 shadow-2xl">
+<a class="flex flex-col items-center justify-center transition-all duration-300 ease-out active:scale-110 text-primary bg-primary/10 rounded-xl px-4 py-1" href="#intro">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-mono text-[10px] mt-1">Intro</span>
+</a>
+<a class="flex flex-col items-center justify-center hover:text-primary transition-all text-on-surface-variant/60" href="#skills">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-mono text-[10px] mt-1">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center hover:text-primary transition-all text-on-surface-variant/60" href="#work">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-label-mono text-[10px] mt-1">Work</span>
+</a>
+<a class="flex flex-col items-center justify-center hover:text-primary transition-all text-on-surface-variant/60" href="#social">
+<span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span>
+<span class="font-label-mono text-[10px] mt-1">Social</span>
+</a>
+</nav>
+<script>
+        // Simple active state toggle for BottomNavBar
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => {
+                    l.classList.remove('text-primary', 'bg-primary/10', 'rounded-xl', 'px-4', 'py-1');
+                    l.classList.add('text-on-surface-variant/60');
+                });
+                this.classList.add('text-primary', 'bg-primary/10', 'rounded-xl', 'px-4', 'py-1');
+                this.classList.remove('text-on-surface-variant/60');
+            });
+        });
+
+        // Intersection Observer for scroll-based active state
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    if (id) {
+                        navLinks.forEach(link => {
+                            if (link.getAttribute('href') === `#${id}`) {
+                                navLinks.forEach(l => {
+                                    l.classList.remove('text-primary', 'bg-primary/10', 'rounded-xl', 'px-4', 'py-1');
+                                    l.classList.add('text-on-surface-variant/60');
+                                });
+                                link.classList.add('text-primary', 'bg-primary/10', 'rounded-xl', 'px-4', 'py-1');
+                                link.classList.remove('text-on-surface-variant/60');
+                            }
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body></html>
